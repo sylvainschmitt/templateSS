@@ -1,11 +1,12 @@
 Package: templateSS
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Title: Personnal templates for R-markdown documents 
+Version: 0.1.9000
+Author: Sylvain SCHMITT
+Maintainer: Sylvain SCHMITT <sylvain.schmitt@agroparistech.fr>
+Description: Include my master thesis template
+License: GPL 3
 Encoding: UTF-8
 LazyData: true
+Imports:
+  knitr
