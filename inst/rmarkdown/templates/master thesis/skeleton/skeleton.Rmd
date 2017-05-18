@@ -1,0 +1,73 @@
+---
+output: 
+  pdf_document:
+    citation_package: natbib
+    fig_caption: true
+    latex_engine: pdflatex
+    template: template.tex
+title: "Master thesis title"
+author: Sylvain SCHMITT
+date: date
+place: place
+jury:
+  - name: "Titre Prénom NOM"
+    role: "Tuteur de stage"
+  - name: "Titre Prénom NOM"
+    role: "Examinateur"
+  - name: "Titre Prénom NOM"
+    role: "Examinateur"
+  - name: "Titre Prénom NOM"
+    role: "Enseignant-référent"
+abstract: "Write your abstract here..."
+resume: "Écrivez votre résumé ici..."
+keywords: "Write your keywords here..."
+motscles: "Écrivez vos mots_clés ici..."
+acknowlegments: "I am grateful to ..."
+geometry: margin=1in
+fontfamily: mathpazo
+fontsize: 12pt
+bibliography: library.bib
+csl: mee.csl
+---
+
+```{r config, message=FALSE, warning=FALSE, include=FALSE}
+rm(list = ls()) ; invisible(gc()) ; set.seed(42)
+library(knitr)
+opts_chunk$set(
+  echo = F, message = F, warning = F, fig.height = 6, fig.width = 8,
+  cache = T, cache.lazy = F)
+```
+
+# First level title
+
+## Second level title
+
+First level titles mak chapters. A page break happen before theim. Make hyperlinks for figures (see figure \ref{fig:figex}), tables (see table \ref{tab:tab1}) and citations (@ferry2010higher).
+
+```{r fig, fig.cap="\\label{fig:figex} Figure title. Details if needed."}
+plot(mtcars$wt, mtcars$mpg)
+```
+
+Equations are numbered:
+$$E = 1-\sum_{i=1} ^S {p_i}^2 ~~ (1)$$
+```{r table}
+table <- data.frame(
+  Index = c('$H_\\alpha$', '$H_\\beta$'),
+  Obs = c('Species frequencies in plots', 'Species frequencies in plots'),
+  Aw = c('Equal frequencies', 'Species frequencies in plots')
+)
+names(table) <- c('Index', 'Observed distibution', 'Awaited distribution')
+kable(table, caption = "\\label{tab:tab1} Table title. table titles are above.")
+```
+
+```{r, echo=TRUE}
+# Librairie ADE 4 indispensable
+library(ade4)
+# Lecture des données : traits pour 34 espèces
+```
+
+Print recto-verso.
+
+Put references at the end of the document.
+
+# References

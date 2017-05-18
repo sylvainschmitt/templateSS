@@ -1,0 +1,4 @@
+name: Master thesis
+description: >
+ Template for creating a master thesis following APT matser 2 recommandations
+create_dir: true
